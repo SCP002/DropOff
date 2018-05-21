@@ -1,0 +1,21 @@
+{
+    "modListVersion": 2,
+    "modList": [{
+        "authorList": ["SCP002"],
+        "credits": "Vazkii, Vorquel, Saeissl, Mysteryem",
+        "dependants": [],
+        "dependencies": [],
+        "description": "Mod, in functionality similar to the DropOff button from the Quark.",
+        "logoFile": "",
+        "mcversion": "1.7.10",
+        "modid": "dropoff",
+        "name": "DropOff",
+        "parent": "",
+        "requiredMods": [ "Forge" ],
+        "screenshots": [],
+        "updateUrl": "",
+        "url": "https://github.com/SCP002/DropOff",
+        "useDependencyInformation": true,
+        "version": "1.7.10-2.8.10"
+  }]
+}

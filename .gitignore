@@ -1,0 +1,23 @@
+# Ignore everything
+/*
+
+# Not these files
+!/.gitattributes
+!/.gitignore
+!/build.gradle
+!/CHANGELOG.md
+!/demo.png
+!/dropoff*.jar
+!/LICENSE
+!/logo.png
+!/README.md
+
+# Not these directories
+!/src
+
+# Not these subdirectories
+# ------ '/run/mods' ------
+!/run
+/run/*
+!/run/mods
+# -------------------------
