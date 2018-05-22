@@ -1,9 +1,9 @@
 package scp002.mod.dropoff.message;
 
-import cpw.mods.fml.common.network.simpleimpl.IMessage;
-import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
-import cpw.mods.fml.common.network.simpleimpl.MessageContext;
 import io.netty.buffer.ByteBuf;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import scp002.mod.dropoff.render.RendererCubeTarget;
 import scp002.mod.dropoff.task.ReportTask;
 import scp002.mod.dropoff.util.ByteBufUtilsExt;

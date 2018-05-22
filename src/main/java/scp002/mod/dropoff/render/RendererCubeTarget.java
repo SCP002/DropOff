@@ -1,6 +1,6 @@
 package scp002.mod.dropoff.render;
 
-import scp002.mod.dropoff.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 
 import java.awt.*;
 import java.util.Objects;

@@ -1,6 +1,7 @@
 package scp002.mod.dropoff.task;
 
-import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.util.text.TextFormatting;
 import scp002.mod.dropoff.config.DropOffConfig;
 import scp002.mod.dropoff.render.RendererCube;
 import scp002.mod.dropoff.render.RendererCubeTarget;
@@ -29,22 +30,22 @@ public class ReportTask implements Runnable {
         }
 
         if (DropOffConfig.INSTANCE.displayMessage) {
-            String message = String.valueOf(EnumChatFormatting.RED) +
+            String message = String.valueOf(TextFormatting.RED) +
                     itemsCounter +
-                    EnumChatFormatting.RESET +
+                    TextFormatting.RESET +
                     " items moved to " +
-                    EnumChatFormatting.RED +
+                    TextFormatting.RED +
                     affectedContainers +
-                    EnumChatFormatting.RESET +
+                    TextFormatting.RESET +
                     " containers of " +
-                    EnumChatFormatting.RED +
+                    TextFormatting.RED +
                     totalContainers +
-                    EnumChatFormatting.RESET +
+                    TextFormatting.RESET +
                     " checked in total.";
 
             ClientUtils.printToChat(message);
         }
 
-        ClientUtils.playSound(ClientUtils.Sounds.BUTTON);
+        ClientUtils.playSound(SoundEvents.UI_BUTTON_CLICK);
     }
 }

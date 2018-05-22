@@ -1,8 +1,8 @@
 package scp002.mod.dropoff.inventory;
 
-import cpw.mods.fml.common.Loader;
 import invtweaks.api.InvTweaksAPI;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.Loader;
 import scp002.mod.dropoff.DropOff;
 
 import javax.annotation.Nonnull;

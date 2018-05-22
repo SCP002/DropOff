@@ -92,84 +92,84 @@ public class DropOffConfig {
 
         // Booleans
         property = config.get(categoryGeneral, "Display message", DefaultValues.displayMessage);
-        property.comment = "[Client-side] Print information to the chat when task is complete.";
+        property.setComment("[Client-side] Print information to the chat when task is complete.");
         process(categoryGeneral, property);
         displayMessage = property.getBoolean();
 
         property = config.get(categoryGeneral, "DropOff", DefaultValues.dropOff);
-        property.comment = "Move items from the player inventory to the nearby containers.";
+        property.setComment("Move items from the player inventory to the nearby containers.");
         process(categoryGeneral, property);
         dropOff = property.getBoolean();
 
         property = config.get(categoryGeneral, "DropOff everyplace", DefaultValues.dropOffEveryPlace);
-        property.comment = "Move items to all containers, even those that are not defined in the configuration.";
+        property.setComment("Move items to all containers, even those that are not defined in the configuration.");
         process(categoryGeneral, property);
         dropOffEveryPlace = property.getBoolean();
 
         property = config.get(categoryGeneral, "DropOff only full stacks", DefaultValues.dropOffOnlyFullStacks);
-        property.comment = "Move only full item stacks from the player inventory.";
+        property.setComment("Move only full item stacks from the player inventory.");
         process(categoryGeneral, property);
         dropOffOnlyFullStacks = property.getBoolean();
 
         property = config.get(categoryGeneral, "Highlight containers", DefaultValues.highlightContainers);
-        property.comment = "[Client-side] Highlight nearby containers.";
+        property.setComment("[Client-side] Highlight nearby containers.");
         process(categoryGeneral, property);
         highlightContainers = property.getBoolean();
 
         property = config.get(categoryGeneral, "Show inventory button", DefaultValues.showInventoryButton);
-        property.comment = "[Client-side] Show button in the player inventory.";
+        property.setComment("[Client-side] Show button in the player inventory.");
         process(categoryGeneral, property);
         showInventoryButton = property.getBoolean();
 
         property = config.get(categoryGeneral, "Sort containers", DefaultValues.sortContainers);
-        property.comment = "Sort nearby containers.";
+        property.setComment("Sort nearby containers.");
         process(categoryGeneral, property);
         sortContainers = property.getBoolean();
 
         property = config.get(categoryGeneral, "Sort player inventory", DefaultValues.sortPlayerInventory);
-        property.comment = "Sort player inventory.";
+        property.setComment("Sort player inventory.");
         process(categoryGeneral, property);
         sortPlayerInventory = property.getBoolean();
 
         // Integers
         property = config.get(categoryGeneral, "Creative inventory button X offset",
                 DefaultValues.creativeInventoryButtonXOffset);
-        property.comment = "[Client-side] Creative inventory button position width offset.";
+        property.setComment("[Client-side] Creative inventory button position width offset.");
         process(categoryGeneral, property);
         creativeInventoryButtonXOffset = property.getInt();
 
         property = config.get(categoryGeneral, "Creative inventory button Y offset",
                 DefaultValues.creativeInventoryButtonYOffset);
-        property.comment = "[Client-side] Creative inventory button position height offset.";
+        property.setComment("[Client-side] Creative inventory button position height offset.");
         process(categoryGeneral, property);
         creativeInventoryButtonYOffset = property.getInt();
 
         property = config.get(categoryGeneral, "Highlight delay", DefaultValues.highlightDelay);
-        property.comment = "[Client-side] Blocks highlighting delay in milliseconds. Delay < 0 means forever.";
+        property.setComment("[Client-side] Blocks highlighting delay in milliseconds. Delay < 0 means forever.");
         process(categoryGeneral, property);
         highlightDelay = property.getInt();
 
         property = config.get(categoryGeneral, "Scan radius", DefaultValues.scanRadius);
-        property.comment = "Radius in blocks to check containers around the player.";
+        property.setComment("Radius in blocks to check containers around the player.");
         process(categoryGeneral, property);
         scanRadius = property.getInt();
 
         property = config.get(categoryGeneral, "Survival inventory button X offset",
                 DefaultValues.survivalInventoryButtonXOffset);
-        property.comment = "[Client-side] Survival inventory button position width offset.";
+        property.setComment("[Client-side] Survival inventory button position width offset.");
         process(categoryGeneral, property);
         survivalInventoryButtonXOffset = property.getInt();
 
         property = config.get(categoryGeneral, "Survival inventory button Y offset",
                 DefaultValues.survivalInventoryButtonYOffset);
-        property.comment = "[Client-side] Survival inventory button position height offset.";
+        property.setComment("[Client-side] Survival inventory button position height offset.");
         process(categoryGeneral, property);
         survivalInventoryButtonYOffset = property.getInt();
 
         // Strings
         property = config.get(categoryGeneral, "Exclude items with names", DefaultValues.excludeItemsWithNames);
-        property.comment = "Do not move items with the following names from the player inventory. Delimiter is '" +
-                delimiter + "'. Wildcards allowed.";
+        property.setComment("Do not move items with the following names from the player inventory. Delimiter is '" +
+                delimiter + "'. Wildcards allowed.");
         process(categoryGeneral, property);
         excludeItemsWithNames = property.getString();
 
@@ -178,57 +178,57 @@ public class DropOffConfig {
         // -------------------------------------------------Containers--------------------------------------------------
         // Booleans
         property = config.get(categoryContainers, "Check beacons", DefaultValues.checkBeacons);
-        property.comment = "Check nearby beacons.";
+        property.setComment("Check nearby beacons.");
         process(categoryContainers, property);
         checkBeacons = property.getBoolean();
 
         property = config.get(categoryContainers, "Check brewing stands", DefaultValues.checkBrewingStands);
-        property.comment = "Check nearby brewing stands.";
+        property.setComment("Check nearby brewing stands.");
         process(categoryContainers, property);
         checkBrewingStands = property.getBoolean();
 
         property = config.get(categoryContainers, "Check chests", DefaultValues.checkChests);
-        property.comment = "Check nearby chests.";
+        property.setComment("Check nearby chests.");
         process(categoryContainers, property);
         checkChests = property.getBoolean();
 
         property = config.get(categoryContainers, "Check dispensers", DefaultValues.checkDispensers);
-        property.comment = "Check nearby dispensers.";
+        property.setComment("Check nearby dispensers.");
         process(categoryContainers, property);
         checkDispensers = property.getBoolean();
 
         property = config.get(categoryContainers, "Check droppers", DefaultValues.checkDroppers);
-        property.comment = "Check nearby droppers.";
+        property.setComment("Check nearby droppers.");
         process(categoryContainers, property);
         checkDroppers = property.getBoolean();
 
         property = config.get(categoryContainers, "Check ender chests", DefaultValues.checkEnderChests);
-        property.comment = "Check nearby ender chests.";
+        property.setComment("Check nearby ender chests.");
         process(categoryContainers, property);
         checkEnderChests = property.getBoolean();
 
         property = config.get(categoryContainers, "Check furnaces", DefaultValues.checkFurnaces);
-        property.comment = "Check nearby furnaces.";
+        property.setComment("Check nearby furnaces.");
         process(categoryContainers, property);
         checkFurnaces = property.getBoolean();
 
         property = config.get(categoryContainers, "Check hoppers", DefaultValues.checkHoppers);
-        property.comment = "Check nearby hoppers.";
+        property.setComment("Check nearby hoppers.");
         process(categoryContainers, property);
         checkHoppers = property.getBoolean();
 
         // Strings
         property = config.get(categoryContainers, "Process containers with names",
                 DefaultValues.processContainersWithNames);
-        property.comment = "Try to manipulate containers with the following names. Delimiter is '" + delimiter +
-                "'. Wildcards allowed.";
+        property.setComment("Try to manipulate containers with the following names. Delimiter is '" + delimiter +
+                "'. Wildcards allowed.");
         process(categoryContainers, property);
         processContainersWithNames = property.getString();
 
         property = config.get(categoryContainers, "Sort containers with names",
                 DefaultValues.sortContainersWithNames);
-        property.comment = "Sort containers with the following names. Delimiter is '" + delimiter +
-                "'. Wildcards allowed.";
+        property.setComment("Sort containers with the following names. Delimiter is '" + delimiter +
+                "'. Wildcards allowed.");
         process(categoryContainers, property);
         sortContainersWithNames = property.getString();
 

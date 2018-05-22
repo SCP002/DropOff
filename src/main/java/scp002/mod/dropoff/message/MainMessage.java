@@ -1,16 +1,15 @@
 package scp002.mod.dropoff.message;
 
-import cpw.mods.fml.common.network.simpleimpl.IMessage;
-import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
-import cpw.mods.fml.common.network.simpleimpl.MessageContext;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import scp002.mod.dropoff.inventory.InteractionResult;
 import scp002.mod.dropoff.inventory.InventoryData;
 import scp002.mod.dropoff.render.RendererCubeTarget;
 import scp002.mod.dropoff.task.MainTask;
-import scp002.mod.dropoff.util.BlockPos;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -68,9 +67,7 @@ public class MainMessage implements IMessage {
                 }
 
                 for (TileEntity entity : inventoryData.getEntities()) {
-                    BlockPos blockPos = new BlockPos(entity.xCoord, entity.yCoord, entity.zCoord);
-
-                    RendererCubeTarget rendererCubeTarget = new RendererCubeTarget(blockPos, color);
+                    RendererCubeTarget rendererCubeTarget = new RendererCubeTarget(entity.getPos(), color);
 
                     rendererCubeTargets.add(rendererCubeTarget);
                 }

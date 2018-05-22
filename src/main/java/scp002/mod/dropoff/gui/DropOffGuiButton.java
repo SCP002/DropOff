@@ -1,7 +1,7 @@
 package scp002.mod.dropoff.gui;
 
-import cpw.mods.fml.client.config.GuiButtonExt;
 import net.minecraft.client.audio.SoundHandler;
+import net.minecraftforge.fml.client.config.GuiButtonExt;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ class DropOffGuiButton extends GuiButtonExt {
     }
 
     @Override
-    public void func_146113_a(SoundHandler soundHandler) {
+    public void playPressSound(SoundHandler soundHandler) {
         //
     }
 }

@@ -1,16 +1,18 @@
 package scp002.mod.dropoff.gui;
 
-import net.minecraft.client.entity.EntityClientPlayerMP;
+import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiInventory;
 import scp002.mod.dropoff.DropOff;
 import scp002.mod.dropoff.config.DropOffConfig;
 import scp002.mod.dropoff.message.MainMessage;
 
+import java.io.IOException;
+
 class DropOffGuiInventory extends GuiInventory {
     private final DropOffGuiButton dropOffGuiButton;
 
-    DropOffGuiInventory(EntityClientPlayerMP player) {
+    DropOffGuiInventory(EntityPlayerSP player) {
         super(player);
 
         dropOffGuiButton = new DropOffGuiButton();
@@ -35,7 +37,11 @@ class DropOffGuiInventory extends GuiInventory {
         if (button == dropOffGuiButton) {
             DropOff.NETWORK.sendToServer(MainMessage.INSTANCE);
         } else {
-            super.actionPerformed(button);
+            try {
+                super.actionPerformed(button);
+            } catch (IOException e) {
+                DropOff.LOGGER.error("Can not perform button action: " + e.getMessage());
+            }
         }
     }
 
@@ -47,7 +53,7 @@ class DropOffGuiInventory extends GuiInventory {
             if (buttonObject instanceof DropOffGuiButton) {
                 DropOffGuiButton dropOffGuiButton = (DropOffGuiButton) buttonObject;
 
-                if (dropOffGuiButton.func_146115_a()) { // If the button is hovered by mouse.
+                if (dropOffGuiButton.isMouseOver()) {
                     super.drawHoveringText(dropOffGuiButton.hoverText, mouseX, mouseY, super.fontRendererObj);
                 }
             }

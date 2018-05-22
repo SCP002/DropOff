@@ -1,11 +1,11 @@
 package scp002.mod.dropoff.gui;
 
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.EntityClientPlayerMP;
+import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.gui.inventory.GuiContainerCreative;
 import net.minecraft.client.gui.inventory.GuiInventory;
 import net.minecraftforge.client.event.GuiOpenEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import scp002.mod.dropoff.config.DropOffConfig;
 
 public class GuiOpenEventHandler {
@@ -14,16 +14,16 @@ public class GuiOpenEventHandler {
     @SubscribeEvent
     public void onGuiOpen(GuiOpenEvent event) {
         if (!DropOffConfig.INSTANCE.showInventoryButton ||
-                !(event.gui instanceof GuiInventory || event.gui instanceof GuiContainerCreative)) {
+                !(event.getGui() instanceof GuiInventory || event.getGui() instanceof GuiContainerCreative)) {
             return;
         }
 
-        EntityClientPlayerMP player = Minecraft.getMinecraft().thePlayer;
+        EntityPlayerSP player = Minecraft.getMinecraft().thePlayer;
 
         if (player.capabilities.isCreativeMode) {
-            event.gui = new DropOffGuiContainerCreative(player);
+            event.setGui(new DropOffGuiContainerCreative(player));
         } else {
-            event.gui = new DropOffGuiInventory(player);
+            event.setGui(new DropOffGuiInventory(player));
         }
     }
 }

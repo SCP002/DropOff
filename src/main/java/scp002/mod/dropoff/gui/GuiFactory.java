@@ -1,8 +1,8 @@
 package scp002.mod.dropoff.gui;
 
-import cpw.mods.fml.client.IModGuiFactory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraftforge.fml.client.IModGuiFactory;
 import scp002.mod.dropoff.config.DropOffGuiConfig;
 
 import javax.annotation.Nullable;
@@ -22,10 +22,11 @@ public class GuiFactory implements IModGuiFactory {
 
     @Nullable
     @Override
-    public Set<RuntimeOptionCategoryElement> runtimeGuiCategories() {
+    public Set<IModGuiFactory.RuntimeOptionCategoryElement> runtimeGuiCategories() {
         return null;
     }
 
+    @SuppressWarnings("deprecation")
     @Nullable
     @Override
     public RuntimeOptionGuiHandler getHandlerFor(RuntimeOptionCategoryElement element) {

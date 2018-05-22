@@ -1,11 +1,11 @@
 package scp002.mod.dropoff.render;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.EntityClientPlayerMP;
+import net.minecraft.client.entity.EntityPlayerSP;
+import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 import org.lwjgl.opengl.GL11;
 import scp002.mod.dropoff.config.DropOffConfig;
-import scp002.mod.dropoff.util.BlockPos;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -39,11 +39,11 @@ public class RendererCube {
     }
 
     private void prepareToRender(RenderWorldLastEvent event, Color color) {
-        EntityClientPlayerMP player = Minecraft.getMinecraft().thePlayer;
+        EntityPlayerSP player = Minecraft.getMinecraft().thePlayer;
 
-        double playerX = player.prevPosX + (player.posX - player.prevPosX) * event.partialTicks - 0.5;
-        double playerY = player.prevPosY + (player.posY - player.prevPosY) * event.partialTicks;
-        double playerZ = player.prevPosZ + (player.posZ - player.prevPosZ) * event.partialTicks - 0.5;
+        double playerX = player.prevPosX + (player.posX - player.prevPosX) * event.getPartialTicks() - 0.5;
+        double playerY = player.prevPosY + (player.posY - player.prevPosY) * event.getPartialTicks();
+        double playerZ = player.prevPosZ + (player.posZ - player.prevPosZ) * event.getPartialTicks() - 0.5;
 
         GL11.glDisable(GL11.GL_LIGHTING);
         GL11.glDisable(GL11.GL_TEXTURE_2D);
