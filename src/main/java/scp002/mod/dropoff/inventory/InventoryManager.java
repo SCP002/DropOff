@@ -96,8 +96,6 @@ public class InventoryManager {
      * corresponds to it.
      */
     String getItemStackName(IInventory inventory) {
-        // TODO: Check output of inventory.getDisplayName() and inventory.getName()
-
         if (inventory instanceof InventoryLargeChest) {
             return Block.getBlockById(54).getLocalizedName();
         }
@@ -118,7 +116,7 @@ public class InventoryManager {
         }
 
         //noinspection deprecation
-        return I18n.translateToLocal(inventory.getName()); // TODO: .getDisplayName?
+        return I18n.translateToLocal(inventory.getName());
     }
 
     int getMaxAllowedStackSize(IInventory inventory, ItemStack stack) {
