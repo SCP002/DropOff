@@ -3,6 +3,7 @@ package scp002.mod.dropoff.gui;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainerCreative;
+import net.minecraft.creativetab.CreativeTabs;
 import scp002.mod.dropoff.DropOff;
 import scp002.mod.dropoff.config.DropOffConfig;
 import scp002.mod.dropoff.message.MainMessage;
@@ -48,6 +49,8 @@ class DropOffGuiContainerCreative extends GuiContainerCreative {
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
         super.drawScreen(mouseX, mouseY, partialTicks);
+
+        dropOffGuiButton.visible = super.getSelectedTabIndex() == CreativeTabs.INVENTORY.getTabIndex();
 
         if (dropOffGuiButton.isMouseOver()) {
             super.drawHoveringText(dropOffGuiButton.hoverText, mouseX, mouseY, super.fontRendererObj);
