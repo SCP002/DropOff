@@ -49,14 +49,8 @@ class DropOffGuiInventory extends GuiInventory {
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
         super.drawScreen(mouseX, mouseY, partialTicks);
 
-        for (Object buttonObject : super.buttonList) {
-            if (buttonObject instanceof DropOffGuiButton) {
-                DropOffGuiButton dropOffGuiButton = (DropOffGuiButton) buttonObject;
-
-                if (dropOffGuiButton.isMouseOver()) {
-                    super.drawHoveringText(dropOffGuiButton.hoverText, mouseX, mouseY, super.fontRendererObj);
-                }
-            }
+        if (dropOffGuiButton.isMouseOver()) {
+            super.drawHoveringText(dropOffGuiButton.hoverText, mouseX, mouseY, super.fontRendererObj);
         }
     }
 }
