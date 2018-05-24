@@ -307,7 +307,7 @@ public class DropOffConfig {
         private static final boolean sortContainers = true;
         private static final boolean sortPlayerInventory = true;
 
-        private static final int creativeInventoryButtonXOffset = 79;
+        private static final int creativeInventoryButtonXOffset = 71;
         private static final int creativeInventoryButtonYOffset = -63;
         private static final int highlightDelay = 3000;
         private static final int scanRadius = 4;
