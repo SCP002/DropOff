@@ -1,3 +1,7 @@
+**2.8.11:**<br />
+Changed: Display button in creative inventory only if Survival Inventory tab is open.<br />
+Performance fixes.<br />
+<br />
 **2.8.10:**<br />
 Changed: Configuration properties and descriptions naming.<br />
 Multiple minor fixes.<br />
