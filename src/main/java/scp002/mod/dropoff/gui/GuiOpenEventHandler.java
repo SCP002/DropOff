@@ -5,6 +5,7 @@ import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.gui.inventory.GuiContainerCreative;
 import net.minecraft.client.gui.inventory.GuiInventory;
 import net.minecraftforge.client.event.GuiOpenEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import scp002.mod.dropoff.config.DropOffConfig;
 
@@ -14,7 +15,8 @@ public class GuiOpenEventHandler {
     @SubscribeEvent
     public void onGuiOpen(GuiOpenEvent event) {
         if (!DropOffConfig.INSTANCE.showInventoryButton ||
-                !(event.getGui() instanceof GuiInventory || event.getGui() instanceof GuiContainerCreative)) {
+                !(event.getGui() instanceof GuiInventory || event.getGui() instanceof GuiContainerCreative) ||
+                (Loader.isModLoaded("Quark") && DropOffConfig.INSTANCE.overrideQuarkButton)) {
             return;
         }
 

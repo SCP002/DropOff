@@ -33,6 +33,7 @@ public class DropOffConfig {
     public boolean dropOffEveryPlace = DefaultValues.dropOffEveryPlace;
     public boolean dropOffOnlyFullStacks = DefaultValues.dropOffOnlyFullStacks;
     public boolean highlightContainers = DefaultValues.highlightContainers;
+    public boolean overrideQuarkButton = DefaultValues.overrideQuarkButton;
     public boolean showInventoryButton = DefaultValues.showInventoryButton;
     public boolean sortContainers = DefaultValues.sortContainers;
     public boolean sortPlayerInventory = DefaultValues.sortPlayerInventory;
@@ -115,6 +116,12 @@ public class DropOffConfig {
         property.setComment("[Client-side] Highlight nearby containers.");
         process(categoryGeneral, property);
         highlightContainers = property.getBoolean();
+
+        property = config.get(categoryGeneral, "Override Quark button", DefaultValues.overrideQuarkButton);
+        property.setComment("[Client-side] If Quark mod is installed, use this mod functionality if click on " +
+                "'Merge to nearby Chests' button.");
+        process(categoryGeneral, property);
+        overrideQuarkButton = property.getBoolean();
 
         property = config.get(categoryGeneral, "Show inventory button", DefaultValues.showInventoryButton);
         property.setComment("[Client-side] Show button in the player inventory.");
@@ -303,6 +310,7 @@ public class DropOffConfig {
         private static final boolean dropOffEveryPlace = false;
         private static final boolean dropOffOnlyFullStacks = false;
         private static final boolean highlightContainers = true;
+        private static final boolean overrideQuarkButton = true;
         private static final boolean showInventoryButton = true;
         private static final boolean sortContainers = true;
         private static final boolean sortPlayerInventory = true;
