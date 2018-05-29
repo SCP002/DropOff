@@ -6,6 +6,7 @@ import net.minecraft.client.gui.inventory.GuiInventory;
 import scp002.mod.dropoff.DropOff;
 import scp002.mod.dropoff.config.DropOffConfig;
 import scp002.mod.dropoff.message.MainMessage;
+import scp002.mod.dropoff.util.ClientUtils;
 
 import java.io.IOException;
 
@@ -35,7 +36,7 @@ class DropOffGuiInventory extends GuiInventory {
     @Override
     protected void actionPerformed(GuiButton button) {
         if (button == dropOffGuiButton) {
-            DropOff.NETWORK.sendToServer(MainMessage.INSTANCE);
+            ClientUtils.sendNoSpectator(MainMessage.INSTANCE);
         } else {
             try {
                 super.actionPerformed(button);

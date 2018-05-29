@@ -7,6 +7,7 @@ import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import scp002.mod.dropoff.DropOff;
 
 public class ClientUtils {
@@ -24,5 +25,13 @@ public class ClientUtils {
         PositionedSoundRecord record = PositionedSoundRecord.getMasterRecord(soundEvent, 1.0f);
 
         soundHandler.playSound(record);
+    }
+
+    public static void sendNoSpectator(IMessage message) {
+        if (Minecraft.getMinecraft().thePlayer.isSpectator()) {
+            printToChat("Action do not allowed in spectator mode.");
+        } else {
+            DropOff.NETWORK.sendToServer(message);
+        }
     }
 }

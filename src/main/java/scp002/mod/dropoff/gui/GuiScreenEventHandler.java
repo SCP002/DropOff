@@ -6,9 +6,9 @@ import net.minecraft.client.gui.inventory.GuiInventory;
 import net.minecraftforge.client.event.GuiScreenEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import scp002.mod.dropoff.DropOff;
 import scp002.mod.dropoff.config.DropOffConfig;
 import scp002.mod.dropoff.message.MainMessage;
+import scp002.mod.dropoff.util.ClientUtils;
 
 public class GuiScreenEventHandler {
     public static final GuiScreenEventHandler INSTANCE = new GuiScreenEventHandler();
@@ -24,6 +24,6 @@ public class GuiScreenEventHandler {
 
         event.setCanceled(true);
 
-        DropOff.NETWORK.sendToServer(MainMessage.INSTANCE);
+        ClientUtils.sendNoSpectator(MainMessage.INSTANCE);
     }
 }

@@ -5,6 +5,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent;
 import org.lwjgl.input.Keyboard;
 import scp002.mod.dropoff.message.MainMessage;
+import scp002.mod.dropoff.util.ClientUtils;
 
 public class KeyInputEventHandler {
     static final KeyInputEventHandler INSTANCE = new KeyInputEventHandler();
@@ -21,6 +22,6 @@ public class KeyInputEventHandler {
             return;
         }
 
-        DropOff.NETWORK.sendToServer(MainMessage.INSTANCE);
+        ClientUtils.sendNoSpectator(MainMessage.INSTANCE);
     }
 }
