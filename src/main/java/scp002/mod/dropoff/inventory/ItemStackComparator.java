@@ -17,7 +17,7 @@ class ItemStackComparator implements Comparator<ItemStack> {
     @Nullable
     private Comparator inventorySorterComparator;
     @Nullable
-    private Constructor itemStackHolderConstructor;
+    private Constructor<?> itemStackHolderConstructor;
 
     ItemStackComparator() {
         if (Loader.isModLoaded("inventorytweaks")) {
