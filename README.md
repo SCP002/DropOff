@@ -7,6 +7,10 @@ You can click the button in the inventory or press '**X**' (by default), and the
 Also, the contents of these containers and player inventory will be sorted (sorting can be disabled).<br />
 <br />
 
+**WARNING:** In versions for Minecraft 1.10.2 and higher this mod replaces similar functionality from Quark when you press Quark's own button.<br />
+If you do not want it to happen, set "Override Quark button" to "false" in config.<br />
+<br />
+
 ***
 **Questions and Answers:**<br />
 <br />
