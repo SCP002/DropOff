@@ -1,3 +1,9 @@
+**2.9.0b:**<br />
+Changed: Default buttons positions to not collide with Inventory Tweaks and Quark.<br />
+Added: Quark inventory button overriding option.<br />
+Added: Support of sorting from Inventory Sorter mod if no Inventory Tweaks installed.<br />
+Added: Spectator mode check.<br />
+<br />
 **2.8.11:**<br />
 Changed: Display button in creative inventory only if Survival Inventory tab is open.<br />
 Performance fixes.<br />
