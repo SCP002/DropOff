@@ -319,7 +319,7 @@ public class DropOffConfig {
         private static final int creativeInventoryButtonYOffset = -63;
         private static final int highlightDelay = 3000;
         private static final int scanRadius = 4;
-        private static final int survivalInventoryButtonXOffset = 71;
+        private static final int survivalInventoryButtonXOffset = 7;
         private static final int survivalInventoryButtonYOffset = -14;
 
         private static final String delimiter = ",";
