@@ -29,7 +29,6 @@ class DropOffGuiInventory extends GuiInventory {
         dropOffGuiButton.xPosition = xPos;
         dropOffGuiButton.yPosition = yPos;
 
-        //noinspection unchecked
         super.buttonList.add(dropOffGuiButton);
     }
 

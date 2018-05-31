@@ -28,7 +28,6 @@ public class DropOffGuiConfig extends GuiConfig {
     private static IConfigElement getCategoryElement(String category, String name) {
         ConfigCategory configCategory = DropOffConfig.INSTANCE.getConfig().getCategory(category);
 
-        @SuppressWarnings("unchecked")
         List<IConfigElement> configElements = new ConfigElement(configCategory).getChildElements();
 
         String langKey = DropOff.MOD_ID + ".config.category." + category;

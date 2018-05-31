@@ -30,7 +30,6 @@ class DropOffGuiContainerCreative extends GuiContainerCreative {
         dropOffGuiButton.xPosition = xPos;
         dropOffGuiButton.yPosition = yPos;
 
-        //noinspection unchecked
         super.buttonList.add(dropOffGuiButton);
     }
 
