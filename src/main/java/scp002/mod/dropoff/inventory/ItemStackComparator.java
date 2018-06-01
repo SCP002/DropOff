@@ -18,7 +18,7 @@ class ItemStackComparator implements Comparator<ItemStack> {
             try {
                 Class<? extends InvTweaksAPI> invTweaksApiClass = Class.forName("invtweaks.forge.InvTweaksMod")
                         .asSubclass(InvTweaksAPI.class);
-                this.invTweaksApi = invTweaksApiClass.newInstance();
+                invTweaksApi = invTweaksApiClass.newInstance();
             } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
                 DropOff.LOGGER.error("Failed to instantiate Inventory Tweaks API: " + e.getMessage());
             }
