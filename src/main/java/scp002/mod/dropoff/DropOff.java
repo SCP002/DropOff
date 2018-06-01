@@ -22,7 +22,7 @@ public class DropOff {
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
     public static final SimpleNetworkWrapper NETWORK = NetworkRegistry.INSTANCE.newSimpleChannel(MOD_ID);
 
-    static final String MOD_VERSION = "1.7.10-2.9.0b";
+    static final String MOD_VERSION = "1.10.2-1.0.0b";
     static final String GUI_FACTORY = "scp002.mod.dropoff.gui.GuiFactory";
 
     private static final String SERVER_SIDE = "scp002.mod.dropoff.CommonProxy";
