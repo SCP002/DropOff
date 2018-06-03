@@ -3,7 +3,6 @@ package scp002.mod.dropoff.inventory;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.InventoryEnderChest;
 import net.minecraft.inventory.InventoryLargeChest;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -95,10 +94,6 @@ public class InventoryManager {
     String getItemStackName(IInventory inventory) {
         if (inventory instanceof InventoryLargeChest) {
             return Block.getBlockById(54).getLocalizedName();
-        }
-
-        if (inventory instanceof InventoryEnderChest) {
-            return Block.getBlockById(130).getLocalizedName();
         }
 
         if (inventory instanceof TileEntityBrewingStand) {
