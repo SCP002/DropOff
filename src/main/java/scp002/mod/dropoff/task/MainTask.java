@@ -52,7 +52,7 @@ public class MainTask implements Runnable {
                 dropOffHandler.setEndSlot(InventoryManager.Slots.LAST);
 
                 if (inventory instanceof TileEntityFurnace) {
-                    if (inventory.getStackInSlot(InventoryManager.Slots.FIRST) == null) {
+                    if (inventory.getStackInSlot(InventoryManager.Slots.FIRST).isEmpty()) {
                         dropOffHandler.setStartSlot(InventoryManager.Slots.FURNACE_FUEL);
                     }
 
