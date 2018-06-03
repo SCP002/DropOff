@@ -44,7 +44,7 @@ public class MainMessage implements IMessage {
 
         @Override
         public IMessage onMessage(MainMessage message, @Nonnull MessageContext ctx) {
-            EntityPlayerMP player = ctx.getServerHandler().playerEntity;
+            EntityPlayerMP player = ctx.getServerHandler().player;
 
             if (mainTask == null || !player.isEntityEqual(mainTask.getPlayer())) {
                 mainTask = new MainTask(player);

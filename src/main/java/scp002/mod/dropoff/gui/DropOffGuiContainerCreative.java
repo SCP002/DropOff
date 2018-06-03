@@ -27,8 +27,8 @@ class DropOffGuiContainerCreative extends GuiContainerCreative {
         int xPos = super.width / 2 + DropOffConfig.INSTANCE.creativeInventoryButtonXOffset;
         int yPos = super.height / 2 + DropOffConfig.INSTANCE.creativeInventoryButtonYOffset;
 
-        dropOffGuiButton.xPosition = xPos;
-        dropOffGuiButton.yPosition = yPos;
+        dropOffGuiButton.x = xPos;
+        dropOffGuiButton.y = yPos;
 
         super.buttonList.add(dropOffGuiButton);
     }
@@ -53,7 +53,7 @@ class DropOffGuiContainerCreative extends GuiContainerCreative {
         dropOffGuiButton.visible = super.getSelectedTabIndex() == CreativeTabs.INVENTORY.getTabIndex();
 
         if (dropOffGuiButton.isMouseOver()) {
-            super.drawHoveringText(dropOffGuiButton.hoverText, mouseX, mouseY, super.fontRendererObj);
+            super.drawHoveringText(dropOffGuiButton.hoverText, mouseX, mouseY, super.fontRenderer);
         }
     }
 }

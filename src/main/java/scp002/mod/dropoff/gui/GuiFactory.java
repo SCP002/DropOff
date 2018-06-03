@@ -16,20 +16,18 @@ public class GuiFactory implements IModGuiFactory {
     }
 
     @Override
-    public Class<? extends GuiScreen> mainConfigGuiClass() {
-        return DropOffGuiConfig.class;
+    public boolean hasConfigGui() {
+        return false;
+    }
+
+    @Override
+    public GuiScreen createConfigGui(GuiScreen parentScreen) {
+        return new DropOffGuiConfig(parentScreen);
     }
 
     @Nullable
     @Override
     public Set<IModGuiFactory.RuntimeOptionCategoryElement> runtimeGuiCategories() {
-        return null;
-    }
-
-    @SuppressWarnings("deprecation")
-    @Nullable
-    @Override
-    public RuntimeOptionGuiHandler getHandlerFor(RuntimeOptionCategoryElement element) {
         return null;
     }
 }

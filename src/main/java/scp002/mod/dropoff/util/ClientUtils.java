@@ -14,10 +14,10 @@ public class ClientUtils {
     public static void printToChat(String message) {
         message = "[" + TextFormatting.BLUE + DropOff.MOD_NAME + TextFormatting.RESET + "]: " + message;
 
-        EntityPlayerSP player = Minecraft.getMinecraft().thePlayer;
+        EntityPlayerSP player = Minecraft.getMinecraft().player;
         TextComponentString textComponentString = new TextComponentString(message);
 
-        player.addChatMessage(textComponentString);
+        player.sendMessage(textComponentString);
     }
 
     public static void playSound(SoundEvent soundEvent) {
@@ -28,7 +28,7 @@ public class ClientUtils {
     }
 
     public static void sendNoSpectator(IMessage message) {
-        if (Minecraft.getMinecraft().thePlayer.isSpectator()) {
+        if (Minecraft.getMinecraft().player.isSpectator()) {
             printToChat("Action do not allowed in spectator mode.");
         } else {
             DropOff.NETWORK.sendToServer(message);

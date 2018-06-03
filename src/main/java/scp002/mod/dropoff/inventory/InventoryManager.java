@@ -73,7 +73,7 @@ public class InventoryManager {
                         }
                     }
 
-                    if (currentInvData.getInventory().isUseableByPlayer(player) && isInventoryValid(currentInvData)) {
+                    if (currentInvData.getInventory().isUsableByPlayer(player) && isInventoryValid(currentInvData)) {
                         inventoryDataList.add(currentInvData);
                     }
                 }

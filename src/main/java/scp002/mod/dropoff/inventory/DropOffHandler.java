@@ -3,13 +3,14 @@ package scp002.mod.dropoff.inventory;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import org.apache.commons.lang3.StringUtils;
 import scp002.mod.dropoff.config.DropOffConfig;
 
 public class DropOffHandler {
     private final InventoryManager inventoryManager;
     private final InventoryPlayer playerInventory;
-    private final ItemStack[] playerStacks;
+    private final NonNullList<ItemStack> playerStacks;
     private int itemsCounter;
     private int startSlot;
     private int endSlot;
@@ -43,20 +44,19 @@ public class DropOffHandler {
             endSlot = toInventory.getSizeInventory();
         }
 
-        for (int i = InventoryManager.Slots.PLAYER_INVENTORY_FIRST; i < playerStacks.length; ++i) {
-            if (playerStacks[i] != null && isItemValid(playerStacks[i].getDisplayName())) {
+        for (int i = InventoryManager.Slots.PLAYER_INVENTORY_FIRST; i < playerStacks.size(); ++i) {
+            if (!playerStacks.get(i).isEmpty() && isItemValid(playerStacks.get(i).getDisplayName())) {
                 if (DropOffConfig.INSTANCE.dropOffOnlyFullStacks &&
-                        playerStacks[i].stackSize <
-                                inventoryManager.getMaxAllowedStackSize(playerInventory, playerStacks[i])) {
+                        playerStacks.get(i).getCount() <
+                                inventoryManager.getMaxAllowedStackSize(playerInventory, playerStacks.get(i))) {
                     continue;
                 }
 
-                int oldPlayerStackSize = playerStacks[i].stackSize;
+                int oldPlayerStackSize = playerStacks.get(i).getCount();
 
                 movePlayerStack(i, toInventory);
 
-                int newPlayerStackSize = (playerStacks[i] == null) ? 0 : playerStacks[i].stackSize;
-                int itemsMoved = oldPlayerStackSize - newPlayerStackSize;
+                int itemsMoved = oldPlayerStackSize - playerStacks.get(i).getCount();
                 itemsCounter += itemsMoved;
 
                 if (itemsMoved > 0) {
@@ -91,7 +91,7 @@ public class DropOffHandler {
         for (int i = startSlot; i < endSlot; ++i) {
             ItemStack toCurrentStack = toInventory.getStackInSlot(i);
 
-            if (toCurrentStack == null) {
+            if (toCurrentStack.isEmpty()) {
                 if (emptySlotIndex == null) {
                     emptySlotIndex = i;
                 }
@@ -99,28 +99,33 @@ public class DropOffHandler {
                 continue;
             }
 
-            if (inventoryManager.isStacksEqual(toCurrentStack, playerStacks[playerStackIndex])) {
+            if (inventoryManager.isStacksEqual(toCurrentStack, playerStacks.get(playerStackIndex))) {
                 hasSameStack = true;
                 int toCurrentStackMaxSize = inventoryManager.getMaxAllowedStackSize(toInventory, toCurrentStack);
 
-                if (toCurrentStack.stackSize + playerStacks[playerStackIndex].stackSize <= toCurrentStackMaxSize) {
-                    toCurrentStack.stackSize += playerStacks[playerStackIndex].stackSize;
-                    playerStacks[playerStackIndex] = null;
+                if (toCurrentStack.getCount() + playerStacks.get(playerStackIndex).getCount() <=
+                        toCurrentStackMaxSize) {
+                    int toCurrentStackNewSize = toCurrentStack.getCount() +
+                            playerStacks.get(playerStackIndex).getCount();
+                    toCurrentStack.setCount(toCurrentStackNewSize);
+
+                    playerStacks.set(playerStackIndex, ItemStack.EMPTY);
 
                     return;
                 } else {
-                    int leftToMax = toCurrentStackMaxSize - toCurrentStack.stackSize;
+                    int leftToMax = toCurrentStackMaxSize - toCurrentStack.getCount();
+                    int playerStacksNewSize = playerStacks.get(playerStackIndex).getCount() - leftToMax;
 
-                    toCurrentStack.stackSize = toCurrentStackMaxSize;
-                    playerStacks[playerStackIndex].stackSize -= leftToMax;
+                    toCurrentStack.setCount(toCurrentStackMaxSize);
+                    playerStacks.get(playerStackIndex).setCount(playerStacksNewSize);
                 }
             }
         }
 
         if (hasSameStack && emptySlotIndex != null &&
-                toInventory.isItemValidForSlot(emptySlotIndex, playerStacks[playerStackIndex])) {
-            toInventory.setInventorySlotContents(emptySlotIndex, playerStacks[playerStackIndex]);
-            playerStacks[playerStackIndex] = null;
+                toInventory.isItemValidForSlot(emptySlotIndex, playerStacks.get(playerStackIndex))) {
+            toInventory.setInventorySlotContents(emptySlotIndex, playerStacks.get(playerStackIndex));
+            playerStacks.set(playerStackIndex, ItemStack.EMPTY);
         }
     }
 }

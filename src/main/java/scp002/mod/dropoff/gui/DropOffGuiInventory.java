@@ -26,8 +26,8 @@ class DropOffGuiInventory extends GuiInventory {
         int xPos = super.width / 2 + DropOffConfig.INSTANCE.survivalInventoryButtonXOffset;
         int yPos = super.height / 2 + DropOffConfig.INSTANCE.survivalInventoryButtonYOffset;
 
-        dropOffGuiButton.xPosition = xPos;
-        dropOffGuiButton.yPosition = yPos;
+        dropOffGuiButton.x = xPos;
+        dropOffGuiButton.y = yPos;
 
         super.buttonList.add(dropOffGuiButton);
     }
@@ -50,7 +50,7 @@ class DropOffGuiInventory extends GuiInventory {
         super.drawScreen(mouseX, mouseY, partialTicks);
 
         if (dropOffGuiButton.isMouseOver()) {
-            super.drawHoveringText(dropOffGuiButton.hoverText, mouseX, mouseY, super.fontRendererObj);
+            super.drawHoveringText(dropOffGuiButton.hoverText, mouseX, mouseY, super.fontRenderer);
         }
     }
 }

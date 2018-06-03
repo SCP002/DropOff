@@ -39,7 +39,7 @@ public class RendererCube {
     }
 
     private void prepareToRender(RenderWorldLastEvent event, Color color) {
-        EntityPlayerSP player = Minecraft.getMinecraft().thePlayer;
+        EntityPlayerSP player = Minecraft.getMinecraft().player;
 
         double playerX = player.prevPosX + (player.posX - player.prevPosX) * event.getPartialTicks() - 0.5;
         double playerY = player.prevPosY + (player.posY - player.prevPosY) * event.getPartialTicks();

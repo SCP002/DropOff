@@ -20,7 +20,7 @@ public class GuiOpenEventHandler {
             return;
         }
 
-        EntityPlayerSP player = Minecraft.getMinecraft().thePlayer;
+        EntityPlayerSP player = Minecraft.getMinecraft().player;
 
         if (player.capabilities.isCreativeMode) {
             event.setGui(new DropOffGuiContainerCreative(player));

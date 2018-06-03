@@ -39,11 +39,11 @@ public class SortingHandler {
         for (int i = startSlot; i < endSlot; ++i) {
             ItemStack currentStack = inventory.getStackInSlot(i);
 
-            if (currentStack != null) {
+            if (!currentStack.isEmpty()) {
                 stacks.add(currentStack);
             }
 
-            inventory.setInventorySlotContents(i, null);
+            inventory.setInventorySlotContents(i, ItemStack.EMPTY);
         }
 
         stacks.sort(itemStackComparator);
@@ -86,29 +86,31 @@ public class SortingHandler {
         for (int i = startSlot; i < endSlot; ++i) {
             ItemStack leftStack = inventory.getStackInSlot(i);
 
-            if (leftStack == null) {
+            if (leftStack.isEmpty()) {
                 continue;
             }
 
             for (int j = i + 1; j < endSlot; ++j) {
                 ItemStack rightStack = inventory.getStackInSlot(j);
 
-                if (rightStack == null) {
+                if (rightStack.isEmpty()) {
                     continue;
                 }
 
                 if (inventoryManager.isStacksEqual(leftStack, rightStack)) {
                     int maxSize = inventoryManager.getMaxAllowedStackSize(inventory, leftStack);
 
-                    if (leftStack.stackSize + rightStack.stackSize <= maxSize) {
-                        leftStack.stackSize += rightStack.stackSize;
+                    if (leftStack.getCount() + rightStack.getCount() <= maxSize) {
+                        int leftStackNewSize = leftStack.getCount() + rightStack.getCount();
+                        leftStack.setCount(leftStackNewSize);
 
-                        inventory.setInventorySlotContents(j, null);
+                        inventory.setInventorySlotContents(j, ItemStack.EMPTY);
                     } else {
-                        int leftToMax = maxSize - leftStack.stackSize;
+                        int leftToMax = maxSize - leftStack.getCount();
+                        int rightStackNewSize = rightStack.getCount() - leftToMax;
 
-                        leftStack.stackSize = maxSize;
-                        rightStack.stackSize -= leftToMax;
+                        leftStack.setCount(maxSize);
+                        rightStack.setCount(rightStackNewSize);
                     }
                 }
             }
