@@ -16,7 +16,7 @@ public class GuiOpenEventHandler {
     public void onGuiOpen(GuiOpenEvent event) {
         if (!DropOffConfig.INSTANCE.showInventoryButton ||
                 !(event.getGui() instanceof GuiInventory || event.getGui() instanceof GuiContainerCreative) ||
-                (Loader.isModLoaded("Quark") && DropOffConfig.INSTANCE.overrideQuarkButton)) {
+                (Loader.isModLoaded("quark") && DropOffConfig.INSTANCE.overrideQuarkButton)) {
             return;
         }
 
