@@ -1,3 +1,6 @@
+**1.7.10 2.8.12:**<br />
+Minor fixes.<br />
+<br />
 **1.7.10 2.8.11:**<br />
 Changed: Display button in creative inventory only if Survival Inventory tab is open.<br />
 Performance fixes.<br />
