@@ -1,6 +1,5 @@
 package scp002.mod.dropoff;
 
-import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -13,13 +12,14 @@ import org.apache.logging.log4j.Logger;
 import scp002.mod.dropoff.config.DropOffConfig;
 import scp002.mod.dropoff.message.MainMessage;
 import scp002.mod.dropoff.message.ReportMessage;
+import scp002.mod.dropoff.util.LogMessageFactory;
 
 @SuppressWarnings("unused")
 @Mod(modid = DropOff.MOD_ID, name = DropOff.MOD_NAME, version = DropOff.MOD_VERSION, guiFactory = DropOff.GUI_FACTORY)
 public class DropOff {
     public static final String MOD_ID = "dropoff";
     public static final String MOD_NAME = "DropOff";
-    public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
+    public static final Logger LOGGER = LogManager.getLogger(MOD_ID, LogMessageFactory.INSTANCE);
     public static final SimpleNetworkWrapper NETWORK = NetworkRegistry.INSTANCE.newSimpleChannel(MOD_ID);
 
     static final String MOD_VERSION = "1.12.2-1.0.0b";
@@ -38,7 +38,7 @@ public class DropOff {
 
     @Mod.EventHandler
     void preInit(FMLPreInitializationEvent event) {
-        FMLLog.getLogger().info("[" + MOD_ID + "]: Beginning pre-initialization...");
+        LOGGER.info("Beginning pre-initialization...");
         commonProxy.preInit(event);
 
         // Register messages.
@@ -51,7 +51,7 @@ public class DropOff {
 
     @Mod.EventHandler
     void init(FMLInitializationEvent event) {
-        FMLLog.getLogger().info("[" + MOD_ID + "]: Beginning initialization...");
+        LOGGER.info("Beginning initialization...");
         commonProxy.init(event);
     }
 }
