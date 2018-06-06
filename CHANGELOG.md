@@ -1,3 +1,6 @@
+**1.7.10 2.8.13:**<br />
+Changed: Use own logger for initialization events in favour of FML's one.<br />
+<br />
 **1.7.10 2.8.12:**<br />
 Minor fixes.<br />
 <br />
