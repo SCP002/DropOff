@@ -1,6 +1,5 @@
 package scp002.mod.dropoff;
 
-import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -38,7 +37,7 @@ public class DropOff {
 
     @Mod.EventHandler
     void preInit(FMLPreInitializationEvent event) {
-        FMLLog.getLogger().info("[" + MOD_ID + "]: Beginning pre-initialization...");
+        LOGGER.info("Beginning pre-initialization...");
         commonProxy.preInit(event);
 
         // Register messages.
@@ -51,7 +50,7 @@ public class DropOff {
 
     @Mod.EventHandler
     void init(FMLInitializationEvent event) {
-        FMLLog.getLogger().info("[" + MOD_ID + "]: Beginning initialization...");
+        LOGGER.info("Beginning initialization...");
         commonProxy.init(event);
     }
 }
