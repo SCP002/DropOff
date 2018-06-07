@@ -28,6 +28,7 @@ public class DropOffConfig {
     public boolean checkEnderChests = DefaultValues.checkEnderChests;
     public boolean checkFurnaces = DefaultValues.checkFurnaces;
     public boolean checkHoppers = DefaultValues.checkHoppers;
+    public boolean checkShulkerBoxes = DefaultValues.checkShulkerBoxes;
     public boolean displayMessage = DefaultValues.displayMessage;
     public boolean dropOff = DefaultValues.dropOff;
     public boolean dropOffEveryPlace = DefaultValues.dropOffEveryPlace;
@@ -224,6 +225,11 @@ public class DropOffConfig {
         process(categoryContainers, property);
         checkHoppers = property.getBoolean();
 
+        property = config.get(categoryContainers, "Check shulker boxes", DefaultValues.checkShulkerBoxes);
+        property.setComment("Check nearby shulker boxes.");
+        process(categoryContainers, property);
+        checkShulkerBoxes = property.getBoolean();
+
         // Strings
         property = config.get(categoryContainers, "Process containers with names",
                 DefaultValues.processContainersWithNames);
@@ -305,6 +311,7 @@ public class DropOffConfig {
         private static final boolean checkEnderChests = true;
         private static final boolean checkFurnaces = true;
         private static final boolean checkHoppers = true;
+        private static final boolean checkShulkerBoxes = true;
         private static final boolean displayMessage = true;
         private static final boolean dropOff = true;
         private static final boolean dropOffEveryPlace = false;

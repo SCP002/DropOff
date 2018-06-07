@@ -148,6 +148,10 @@ public class InventoryManager {
             return DropOffConfig.INSTANCE.checkHoppers;
         }
 
+        if (entity instanceof TileEntityShulkerBox) {
+            return DropOffConfig.INSTANCE.checkShulkerBoxes;
+        }
+
         if (entity instanceof TileEntityDispenser) {
             if (entity instanceof TileEntityDropper) {
                 return DropOffConfig.INSTANCE.checkDroppers;
