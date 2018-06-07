@@ -5,6 +5,7 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.fml.client.IModGuiFactory;
 import scp002.mod.dropoff.config.DropOffGuiConfig;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Set;
 
@@ -21,7 +22,7 @@ public class GuiFactory implements IModGuiFactory {
     }
 
     @Override
-    public GuiScreen createConfigGui(GuiScreen parentScreen) {
+    public GuiScreen createConfigGui(@Nonnull GuiScreen parentScreen) {
         return new DropOffGuiConfig(parentScreen);
     }
 
