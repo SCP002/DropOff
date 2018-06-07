@@ -333,6 +333,6 @@ public class DropOffConfig {
         private static final String excludeItemsWithNames = "Item Name" + delimiter + "Item*Names";
         private static final String processContainersWithNames = "*Barrel*" + delimiter + "*Chest*" + delimiter +
                 "*Drawer*";
-        private static final String sortContainersWithNames = "*Chest*";
+        private static final String sortContainersWithNames = "*Chest*" + delimiter + "*Shulker Box";
     }
 }
