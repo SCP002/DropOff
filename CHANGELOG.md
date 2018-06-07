@@ -1,3 +1,7 @@
+**1.10.2 1.0.2b:**<br />
+Changed: Logger now use mod id as prefix for its messages.<br />
+Changed: Use own logger for initialization events in favour of FML's one.<br />
+<br />
 **1.10.2 1.0.1b:**<br />
 Minor fixes.<br />
 <br />
