@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SortingHandler {
+
     private final InventoryManager inventoryManager;
     private final ItemStackComparator itemStackComparator;
     private int startSlot;
@@ -116,4 +117,5 @@ public class SortingHandler {
             }
         }
     }
+
 }

@@ -10,6 +10,7 @@ import java.io.File;
 import java.util.*;
 
 public class DropOffConfig {
+
     public static final DropOffConfig INSTANCE = new DropOffConfig();
 
     public final String delimiter = DefaultValues.delimiter;
@@ -303,6 +304,7 @@ public class DropOffConfig {
     }
 
     private abstract class DefaultValues {
+
         private static final boolean checkBeacons = true;
         private static final boolean checkBrewingStands = true;
         private static final boolean checkChests = true;
@@ -334,5 +336,7 @@ public class DropOffConfig {
         private static final String processContainersWithNames = "*Barrel*" + delimiter + "*Chest*" + delimiter +
                 "*Drawer*";
         private static final String sortContainersWithNames = "*Chest*" + delimiter + "*Shulker Box";
+
     }
+
 }

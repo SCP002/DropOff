@@ -4,6 +4,7 @@ import org.apache.logging.log4j.message.*;
 import scp002.mod.dropoff.DropOff;
 
 public class LogMessageFactory implements MessageFactory {
+
     public static final LogMessageFactory INSTANCE = new LogMessageFactory();
 
     private final String prefix = "[" + DropOff.MOD_ID + "]: ";
@@ -22,4 +23,5 @@ public class LogMessageFactory implements MessageFactory {
     public Message newMessage(String message, Object... params) {
         return new ParameterizedMessage(prefix + message, params);
     }
+
 }

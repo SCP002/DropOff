@@ -10,6 +10,7 @@ import scp002.mod.dropoff.util.ClientUtils;
 import java.util.List;
 
 public class ReportTask implements Runnable {
+
     private final int itemsCounter;
     private final int affectedContainers;
     private final int totalContainers;
@@ -48,4 +49,5 @@ public class ReportTask implements Runnable {
 
         ClientUtils.playSound(SoundEvents.UI_BUTTON_CLICK);
     }
+
 }

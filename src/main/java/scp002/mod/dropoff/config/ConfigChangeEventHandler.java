@@ -5,6 +5,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import scp002.mod.dropoff.DropOff;
 
 public class ConfigChangeEventHandler {
+
     public static final ConfigChangeEventHandler INSTANCE = new ConfigChangeEventHandler();
 
     @SubscribeEvent
@@ -16,4 +17,5 @@ public class ConfigChangeEventHandler {
         DropOff.LOGGER.info("Configuration changed.");
         DropOffConfig.INSTANCE.sync(false);
     }
+
 }

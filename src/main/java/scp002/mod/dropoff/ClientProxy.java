@@ -11,6 +11,7 @@ import scp002.mod.dropoff.render.RenderWorldLastEventHandler;
 
 @SuppressWarnings("unused")
 public class ClientProxy extends CommonProxy {
+
     @Override
     public void preInit(FMLPreInitializationEvent event) {
         // Register key bindings.
@@ -26,4 +27,5 @@ public class ClientProxy extends CommonProxy {
         MinecraftForge.EVENT_BUS.register(KeyInputEventHandler.INSTANCE);
         MinecraftForge.EVENT_BUS.register(ConfigChangeEventHandler.INSTANCE);
     }
+
 }

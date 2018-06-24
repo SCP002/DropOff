@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ByteBufUtilsExt extends ByteBufUtils {
+
     private final ByteBuf buf;
 
     public ByteBufUtilsExt(ByteBuf buf) {
@@ -74,4 +75,5 @@ public class ByteBufUtilsExt extends ByteBufUtils {
 
         return new Color(red, green, blue);
     }
+
 }

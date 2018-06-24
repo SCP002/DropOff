@@ -11,6 +11,7 @@ import scp002.mod.dropoff.util.ClientUtils;
 import java.io.IOException;
 
 class DropOffGuiInventory extends GuiInventory {
+
     private final DropOffGuiButton dropOffGuiButton;
 
     DropOffGuiInventory(EntityPlayerSP player) {
@@ -53,4 +54,5 @@ class DropOffGuiInventory extends GuiInventory {
             super.drawHoveringText(dropOffGuiButton.hoverText, mouseX, mouseY, super.fontRenderer);
         }
     }
+
 }

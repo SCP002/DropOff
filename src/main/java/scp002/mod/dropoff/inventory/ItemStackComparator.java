@@ -12,6 +12,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Comparator;
 
 class ItemStackComparator implements Comparator<ItemStack> {
+
     @Nullable
     private InvTweaksAPI invTweaksApi;
     @Nullable
@@ -72,4 +73,5 @@ class ItemStackComparator implements Comparator<ItemStack> {
 
         return left.getDisplayName().compareToIgnoreCase(right.getDisplayName());
     }
+
 }

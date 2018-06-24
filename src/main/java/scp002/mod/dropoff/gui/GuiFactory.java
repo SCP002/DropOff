@@ -11,6 +11,7 @@ import java.util.Set;
 
 @SuppressWarnings("unused")
 public class GuiFactory implements IModGuiFactory {
+
     @Override
     public void initialize(Minecraft minecraft) {
         //
@@ -31,4 +32,5 @@ public class GuiFactory implements IModGuiFactory {
     public Set<IModGuiFactory.RuntimeOptionCategoryElement> runtimeGuiCategories() {
         return null;
     }
+
 }
