@@ -1,3 +1,7 @@
+**1.7.10 2.8.14:**<br />
+Removed: Placeholder value for 'Exclude items with names' from default config.<br />
+Minor changes.<br />
+<br />
 **1.7.10 2.8.13:**<br />
 Changed: Use own logger for initialization events in favour of FML's one.<br />
 <br />
