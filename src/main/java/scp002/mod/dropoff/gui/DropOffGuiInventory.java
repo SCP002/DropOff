@@ -8,6 +8,7 @@ import scp002.mod.dropoff.config.DropOffConfig;
 import scp002.mod.dropoff.message.MainMessage;
 
 class DropOffGuiInventory extends GuiInventory {
+
     private final DropOffGuiButton dropOffGuiButton;
 
     DropOffGuiInventory(EntityClientPlayerMP player) {
@@ -47,4 +48,5 @@ class DropOffGuiInventory extends GuiInventory {
             super.drawHoveringText(dropOffGuiButton.hoverText, mouseX, mouseY, super.fontRendererObj);
         }
     }
+
 }

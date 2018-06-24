@@ -9,6 +9,7 @@ import net.minecraftforge.client.event.GuiOpenEvent;
 import scp002.mod.dropoff.config.DropOffConfig;
 
 public class GuiOpenEventHandler {
+
     public static final GuiOpenEventHandler INSTANCE = new GuiOpenEventHandler();
 
     @SubscribeEvent
@@ -26,4 +27,5 @@ public class GuiOpenEventHandler {
             event.gui = new DropOffGuiInventory(player);
         }
     }
+
 }

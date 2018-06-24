@@ -10,6 +10,7 @@ import javax.annotation.Nullable;
 import java.util.Comparator;
 
 class ItemStackComparator implements Comparator<ItemStack> {
+
     @Nullable
     private InvTweaksAPI invTweaksApi;
 
@@ -33,4 +34,5 @@ class ItemStackComparator implements Comparator<ItemStack> {
 
         return left.getDisplayName().compareToIgnoreCase(right.getDisplayName());
     }
+
 }

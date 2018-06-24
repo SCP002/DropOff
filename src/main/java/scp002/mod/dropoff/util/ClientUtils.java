@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 import scp002.mod.dropoff.DropOff;
 
 public class ClientUtils {
+
     public static void printToChat(String message) {
         message = "[" + EnumChatFormatting.BLUE + DropOff.MOD_NAME + EnumChatFormatting.RESET + "]: " + message;
 
@@ -28,6 +29,9 @@ public class ClientUtils {
     }
 
     public abstract static class Sounds {
+
         public static final String BUTTON = "gui.button.press";
+
     }
+
 }

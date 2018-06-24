@@ -6,6 +6,7 @@ import java.awt.*;
 import java.util.Objects;
 
 public class RendererCubeTarget {
+
     private final BlockPos blockPos;
     private final Color color;
 
@@ -48,4 +49,5 @@ public class RendererCubeTarget {
     public int hashCode() {
         return Objects.hash(blockPos, color);
     }
+
 }

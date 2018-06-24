@@ -5,6 +5,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 public class CommonProxy {
+
     void preInit(FMLPreInitializationEvent event) {
         //
     }
@@ -12,4 +13,5 @@ public class CommonProxy {
     void init(FMLInitializationEvent event) {
         //
     }
+
 }

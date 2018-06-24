@@ -9,6 +9,7 @@ import scp002.mod.dropoff.config.DropOffConfig;
 import scp002.mod.dropoff.message.MainMessage;
 
 class DropOffGuiContainerCreative extends GuiContainerCreative {
+
     private final DropOffGuiButton dropOffGuiButton;
 
     DropOffGuiContainerCreative(EntityClientPlayerMP player) {
@@ -51,4 +52,5 @@ class DropOffGuiContainerCreative extends GuiContainerCreative {
             super.drawHoveringText(dropOffGuiButton.hoverText, mouseX, mouseY, super.fontRendererObj);
         }
     }
+
 }

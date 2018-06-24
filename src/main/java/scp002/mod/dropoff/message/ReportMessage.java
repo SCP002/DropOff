@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReportMessage implements IMessage {
+
     private int itemsCounter;
     private int affectedContainers;
     private int totalContainers;
@@ -56,6 +57,7 @@ public class ReportMessage implements IMessage {
     }
 
     public static class Handler implements IMessageHandler<ReportMessage, IMessage> {
+
         @Nullable
         @Override
         public IMessage onMessage(@Nonnull ReportMessage message, MessageContext ctx) {
@@ -66,5 +68,7 @@ public class ReportMessage implements IMessage {
 
             return null;
         }
+
     }
+
 }

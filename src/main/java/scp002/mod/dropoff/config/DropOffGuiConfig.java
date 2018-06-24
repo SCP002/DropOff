@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DropOffGuiConfig extends GuiConfig {
+
     public DropOffGuiConfig(GuiScreen parent) {
         super(parent, getConfigElements(), DropOff.MOD_ID, false, false,
                 getAbridgedConfigPath(DropOffConfig.INSTANCE.getConfig().getConfigFile().toString()));
@@ -35,4 +36,5 @@ public class DropOffGuiConfig extends GuiConfig {
 
         return new DummyConfigElement.DummyCategoryElement(name, langKey, configElements);
     }
+
 }

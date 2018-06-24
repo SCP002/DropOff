@@ -18,6 +18,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class InventoryManager {
+
     private final EntityPlayerMP player;
     private final World world;
 
@@ -300,11 +301,14 @@ public class InventoryManager {
     }
 
     public abstract class Slots {
+
         public static final int LAST = -1;
         public static final int FIRST = 0;
         public static final int FURNACE_FUEL = 1;
         public static final int FURNACE_OUT = 2;
         public static final int PLAYER_INVENTORY_FIRST = 9;
         public static final int PLAYER_INVENTORY_LAST = 36;
+
     }
+
 }

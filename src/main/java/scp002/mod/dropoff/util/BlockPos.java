@@ -3,6 +3,7 @@ package scp002.mod.dropoff.util;
 import java.util.Objects;
 
 public class BlockPos {
+
     private final int x;
     private final int y;
     private final int z;
@@ -53,4 +54,5 @@ public class BlockPos {
     public int hashCode() {
         return Objects.hash(x, y, z);
     }
+
 }

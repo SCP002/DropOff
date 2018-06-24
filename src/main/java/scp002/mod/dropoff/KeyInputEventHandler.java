@@ -7,6 +7,7 @@ import org.lwjgl.input.Keyboard;
 import scp002.mod.dropoff.message.MainMessage;
 
 public class KeyInputEventHandler {
+
     static final KeyInputEventHandler INSTANCE = new KeyInputEventHandler();
 
     final KeyBinding mainTaskKeyBinding;
@@ -23,4 +24,5 @@ public class KeyInputEventHandler {
 
         DropOff.NETWORK.sendToServer(MainMessage.INSTANCE);
     }
+
 }

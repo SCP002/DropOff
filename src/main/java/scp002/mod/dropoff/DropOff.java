@@ -16,6 +16,7 @@ import scp002.mod.dropoff.message.ReportMessage;
 @SuppressWarnings("unused")
 @Mod(modid = DropOff.MOD_ID, name = DropOff.MOD_NAME, version = DropOff.MOD_VERSION, guiFactory = DropOff.GUI_FACTORY)
 public class DropOff {
+
     public static final String MOD_ID = "dropoff";
     public static final String MOD_NAME = "DropOff";
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
@@ -53,4 +54,5 @@ public class DropOff {
         LOGGER.info("Beginning initialization...");
         commonProxy.init(event);
     }
+
 }

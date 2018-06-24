@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainMessage implements IMessage {
+
     public static final MainMessage INSTANCE = new MainMessage();
 
     /**
@@ -40,6 +41,7 @@ public class MainMessage implements IMessage {
     }
 
     public static class Handler implements IMessageHandler<MainMessage, IMessage> {
+
         @Nullable
         private MainTask mainTask;
 
@@ -79,5 +81,7 @@ public class MainMessage implements IMessage {
             return new ReportMessage(mainTask.getItemsCounter(), affectedContainers, inventoryDataList.size(),
                     rendererCubeTargets);
         }
+
     }
+
 }

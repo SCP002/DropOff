@@ -11,6 +11,7 @@ import scp002.mod.dropoff.render.RenderWorldLastEventHandler;
 
 @SuppressWarnings("unused")
 public class ClientProxy extends CommonProxy {
+
     @Override
     public void preInit(FMLPreInitializationEvent event) {
         // Register key bindings.
@@ -25,4 +26,5 @@ public class ClientProxy extends CommonProxy {
         FMLCommonHandler.instance().bus().register(KeyInputEventHandler.INSTANCE);
         FMLCommonHandler.instance().bus().register(ConfigChangeEventHandler.INSTANCE);
     }
+
 }
