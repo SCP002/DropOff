@@ -1,3 +1,7 @@
+**1.10.2 1.0.3b:**<br />
+Removed: Placeholder value for 'Exclude items with names' from default config.<br />
+Minor changes.<br />
+<br />
 **1.10.2 1.0.2b:**<br />
 Changed: Logger now use mod id as prefix for its messages.<br />
 Changed: Use own logger for initialization events in favour of FML's one.<br />
