@@ -317,7 +317,7 @@ public class DropOffConfig {
         private static final int survivalInventoryButtonYOffset = -14;
 
         private static final String delimiter = ",";
-        private static final String excludeItemsWithNames = "Item Name" + delimiter + "Item*Names";
+        private static final String excludeItemsWithNames = "";
         private static final String processContainersWithNames = "*Barrel*" + delimiter + "*Chest*" + delimiter +
                 "*Drawer*";
         private static final String sortContainersWithNames = "*Chest*";
