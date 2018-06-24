@@ -121,14 +121,6 @@ public class InventoryManager {
     private boolean isInventoryValid(InventoryData inventoryData) {
         TileEntity entity = inventoryData.getEntities().get(0);
 
-        if (entity instanceof TileEntityEnderChest) {
-            return DropOffConfig.INSTANCE.checkEnderChests;
-        }
-
-        if (entity instanceof TileEntityFurnace) {
-            return DropOffConfig.INSTANCE.checkFurnaces;
-        }
-
         if (entity instanceof TileEntityBeacon) {
             return DropOffConfig.INSTANCE.checkBeacons;
         }
@@ -141,16 +133,24 @@ public class InventoryManager {
             return DropOffConfig.INSTANCE.checkChests;
         }
 
-        if (entity instanceof TileEntityHopper) {
-            return DropOffConfig.INSTANCE.checkHoppers;
-        }
-
         if (entity instanceof TileEntityDispenser) {
             if (entity instanceof TileEntityDropper) {
                 return DropOffConfig.INSTANCE.checkDroppers;
             }
 
             return DropOffConfig.INSTANCE.checkDispensers;
+        }
+
+        if (entity instanceof TileEntityEnderChest) {
+            return DropOffConfig.INSTANCE.checkEnderChests;
+        }
+
+        if (entity instanceof TileEntityFurnace) {
+            return DropOffConfig.INSTANCE.checkFurnaces;
+        }
+
+        if (entity instanceof TileEntityHopper) {
+            return DropOffConfig.INSTANCE.checkHoppers;
         }
 
         String inventoryName = getItemStackName(inventoryData.getInventory());
