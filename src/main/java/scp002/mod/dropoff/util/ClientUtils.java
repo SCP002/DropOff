@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import scp002.mod.dropoff.DropOff;
 
 public class ClientUtils {
+
     public static void printToChat(String message) {
         message = "[" + TextFormatting.BLUE + DropOff.MOD_NAME + TextFormatting.RESET + "]: " + message;
 
@@ -34,4 +35,5 @@ public class ClientUtils {
             DropOff.NETWORK.sendToServer(message);
         }
     }
+
 }

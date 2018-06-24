@@ -11,6 +11,7 @@ import scp002.mod.dropoff.message.MainMessage;
 import scp002.mod.dropoff.util.ClientUtils;
 
 public class GuiScreenEventHandler {
+
     public static final GuiScreenEventHandler INSTANCE = new GuiScreenEventHandler();
 
     @SubscribeEvent(priority = EventPriority.HIGH)
@@ -26,4 +27,5 @@ public class GuiScreenEventHandler {
 
         ClientUtils.sendNoSpectator(MainMessage.INSTANCE);
     }
+
 }

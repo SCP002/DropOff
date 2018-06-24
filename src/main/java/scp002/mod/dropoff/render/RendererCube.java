@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RendererCube {
+
     public static final RendererCube INSTANCE = new RendererCube();
     private List<RendererCubeTarget> rendererCubeTargets = new ArrayList<>();
     private long currentTime;
@@ -143,4 +144,5 @@ public class RendererCube {
         GL11.glEnable(GL11.GL_DEPTH_TEST);
         GL11.glPopMatrix();
     }
+
 }

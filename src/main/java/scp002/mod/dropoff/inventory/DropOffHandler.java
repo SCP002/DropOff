@@ -7,6 +7,7 @@ import org.apache.commons.lang3.StringUtils;
 import scp002.mod.dropoff.config.DropOffConfig;
 
 public class DropOffHandler {
+
     private final InventoryManager inventoryManager;
     private final InventoryPlayer playerInventory;
     private final ItemStack[] playerStacks;
@@ -123,4 +124,5 @@ public class DropOffHandler {
             playerStacks[playerStackIndex] = null;
         }
     }
+
 }

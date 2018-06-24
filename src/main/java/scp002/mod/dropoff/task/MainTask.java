@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainTask implements Runnable {
+
     private final EntityPlayerMP player;
     private final InventoryManager inventoryManager;
     private final DropOffHandler dropOffHandler;
@@ -87,4 +88,5 @@ public class MainTask implements Runnable {
 
         player.inventoryContainer.detectAndSendChanges();
     }
+
 }

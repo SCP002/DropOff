@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class InventoryData {
+
     private final List<TileEntity> entities;
     private final IInventory inventory;
     private InteractionResult interactionResult;
@@ -63,4 +64,5 @@ public class InventoryData {
     public int hashCode() {
         return Objects.hash(entities, inventory, interactionResult);
     }
+
 }
