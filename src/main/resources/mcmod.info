@@ -11,11 +11,11 @@
         "modid": "dropoff",
         "name": "DropOff",
         "parent": "",
-        "requiredMods": [ "forge" ],
+        "requiredMods": ["forge"],
         "screenshots": [],
         "updateUrl": "",
         "url": "https://github.com/SCP002/DropOff",
         "useDependencyInformation": true,
-        "version": "1.12.2-1.0.1b"
+        "version": "1.12.2-1.0.2b"
   }]
 }
