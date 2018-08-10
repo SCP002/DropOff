@@ -9,6 +9,7 @@ import scp002.mod.dropoff.config.DropOffConfig;
 import scp002.mod.dropoff.message.MainMessage;
 import scp002.mod.dropoff.util.ClientUtils;
 
+import javax.annotation.Nonnull;
 import java.io.IOException;
 
 class DropOffGuiContainerCreative extends GuiContainerCreative {
@@ -35,7 +36,7 @@ class DropOffGuiContainerCreative extends GuiContainerCreative {
     }
 
     @Override
-    protected void actionPerformed(GuiButton button) {
+    protected void actionPerformed(@Nonnull GuiButton button) {
         if (button == dropOffGuiButton) {
             ClientUtils.sendNoSpectator(MainMessage.INSTANCE);
         } else {
